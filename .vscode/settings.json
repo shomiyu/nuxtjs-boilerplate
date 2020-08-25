@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#fafafa",
+    "activityBar.background": "#7C4B8D",
+    "activityBar.foreground": "#fafafa",
+    "activityBarBadge.background": "#333",
+  },
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false,
+}
