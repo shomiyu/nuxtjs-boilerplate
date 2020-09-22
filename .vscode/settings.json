@@ -5,7 +5,4 @@
     "activityBar.foreground": "#fafafa",
     "activityBarBadge.background": "#333",
   },
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
-  "editor.formatOnPaste": false,
 }

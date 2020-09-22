@@ -8,17 +8,14 @@ module.exports = {
     parser: 'babel-eslint',
   },
   extends: [
-    'eslint:recommended',
-    'plugin:vue/recommended',
+    '@nuxtjs',
+    'prettier',
+    'prettier/vue',
     'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
   ],
-  plugins: ['vue'],
+  plugins: ['prettier'],
   rules: {
-    semi: [2, 'never'],
-    'no-console': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'no-unused-vars': 'off',
-    'vue/html-self-closing': 'off',
-    'prettier/prettier': ['error', { semi: false, singleQuote: true }],
+    'vue/no-v-html': 0,
   },
 }
