@@ -79,9 +79,9 @@ export default {
    */
   styleResources: {
     scss: [
+      '~/assets/scss/settings/_variables.scss',
       '~/assets/scss/settings/_functions.scss',
       '~/assets/scss/settings/_mixins.scss',
-      '~/assets/scss/settings/_variables.scss',
     ],
   },
   /*

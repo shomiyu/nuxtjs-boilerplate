@@ -10,7 +10,7 @@ export default {}
 
 <style lang="scss" scoped>
 .title {
-  color: $color-text-primary;
+  color: $base-text-color;
   text-align: center;
 }
 </style>
