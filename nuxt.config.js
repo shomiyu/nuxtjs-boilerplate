@@ -49,7 +49,17 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
+    '@nuxtjs/date-fns',
+    '@aceforth/nuxt-optimized-images',
   ],
+  /**
+   * Nuxt Optimized Images
+   * See: https://marquez.co/docs/nuxt-optimized-images/?ref=aceforth
+   */
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: true,
+  },
   /*
    ** Nuxt.js modules
    */
@@ -98,6 +108,10 @@ export default {
           exclude: /(node_modules)/,
         })
       }
+    },
+    filenames: {
+      app: ({ isDev }) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
+      chunk: ({ isDev }) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
     },
   },
 }
