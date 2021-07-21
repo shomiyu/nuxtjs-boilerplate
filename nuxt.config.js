@@ -51,6 +51,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/date-fns',
     '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/style-resources',
   ],
   /**
    * Nuxt Optimized Images
@@ -61,12 +62,22 @@ export default {
     optimizeImagesInDev: true,
   },
   /*
+   ** style-resources module configuration
+   ** use global sass settings
+   */
+  styleResources: {
+    scss: [
+      '~/assets/scss/settings/_functions.scss',
+      '~/assets/scss/settings/_variables.scss',
+      '~/assets/scss/settings/_mixins.scss',
+    ],
+  },
+  /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources',
   ],
   /*
    ** Axios module configuration
@@ -82,17 +93,6 @@ export default {
   env: {
     API_KEY: process.env.API_KEY,
     BASE_URI: process.env.BASE_URI,
-  },
-  /*
-   ** style-resources module configuration
-   ** use global sass settings
-   */
-  styleResources: {
-    scss: [
-      '~/assets/scss/settings/_variables.scss',
-      '~/assets/scss/settings/_functions.scss',
-      '~/assets/scss/settings/_mixins.scss',
-    ],
   },
   /*
    ** Build configuration
