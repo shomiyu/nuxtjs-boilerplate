@@ -1,3 +1,5 @@
+@use "./settings/variables" as var;
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -11,12 +13,12 @@ html {
 
 body {
   height: 100%;
-  font-family: $base-font-family;
-  font-size: $font-size-base;
+  font-family: var.$base-font-family;
+  font-size: var.$font-size-base;
   line-height: 1.5;
-  color: $base-text-color;
+  color: var.$base-text-color;
   letter-spacing: 0.05em;
-  background-color: $color-body-background;
+  background-color: var.$color-body-background;
 }
 
 img {

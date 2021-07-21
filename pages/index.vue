@@ -9,8 +9,10 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+@use "~assets/scss/settings/variables" as var;
+
 .title {
-  color: $base-text-color;
+  color: var.$base-text-color;
   text-align: center;
 }
 </style>

@@ -29,9 +29,15 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
-   ** Global CSS
+   ** Global CSS and Sass
    */
-  css: ['ress', '~/assets/scss/base.scss'],
+  css: [
+    'ress',
+    '~/assets/scss/settings/_functions.scss',
+    '~/assets/scss/settings/_variables.scss',
+    '~/assets/scss/settings/_mixins.scss',
+    '~/assets/scss/base.scss',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -51,7 +57,6 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/date-fns',
     '@aceforth/nuxt-optimized-images',
-    '@nuxtjs/style-resources',
   ],
   /**
    * Nuxt Optimized Images
@@ -60,17 +65,6 @@ export default {
   optimizedImages: {
     optimizeImages: true,
     optimizeImagesInDev: true,
-  },
-  /*
-   ** style-resources module configuration
-   ** use global sass settings
-   */
-  styleResources: {
-    scss: [
-      '~/assets/scss/settings/_functions.scss',
-      '~/assets/scss/settings/_variables.scss',
-      '~/assets/scss/settings/_mixins.scss',
-    ],
   },
   /*
    ** Nuxt.js modules
