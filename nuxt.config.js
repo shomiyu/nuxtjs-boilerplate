@@ -1,17 +1,18 @@
 const title = 'Nuxt.js project starter template'
 const description = 'This is Nuxt.js project starter template.'
+const target = 'static' // server or static
 
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'universal',
+  ssr: true,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'server',
+  target,
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
