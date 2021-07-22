@@ -1,3 +1,6 @@
+@use "variables" as var;
+@use "sass:map";
+
 /**
  * レスポンシブ
  * - sm:  400px〜
@@ -13,7 +16,7 @@ $breakpoints: (
 ) !default;
 
 @mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
@@ -24,7 +27,7 @@ $breakpoints: (
  * - @param width 幅
  * - @param border-radius 角丸
  */
-@mixin btn-generate($height, $width: 100%, $border-radius: $base-radius) {
+@mixin btn-generate($height, $width: 100%, $border-radius: var.$base-radius) {
   appearance: none;
   display: inline-block;
   width: $width;
@@ -46,8 +49,8 @@ $breakpoints: (
  */
 @mixin btn-style(
   $bg-color,
-  $color: $base-text-color,
-  $border-width: $base-border-width,
+  $color: var.$base-text-color,
+  $border-width: var.$base-border-width,
   $border-color: $border-color
 ) {
   color: $color;

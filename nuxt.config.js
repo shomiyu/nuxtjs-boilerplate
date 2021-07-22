@@ -1,17 +1,18 @@
 const title = 'Nuxt.js project starter template'
 const description = 'This is Nuxt.js project starter template.'
+const target = 'static' // server or static
 
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'universal',
+  ssr: true,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'server',
+  target,
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -29,9 +30,15 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
-   ** Global CSS
+   ** Global CSS and Sass
    */
-  css: ['ress', '~/assets/scss/base.scss'],
+  css: [
+    'ress',
+    '~/assets/scss/settings/_functions.scss',
+    '~/assets/scss/settings/_variables.scss',
+    '~/assets/scss/settings/_mixins.scss',
+    '~/assets/scss/base.scss',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -66,7 +73,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources',
   ],
   /*
    ** Axios module configuration
@@ -82,17 +88,6 @@ export default {
   env: {
     API_KEY: process.env.API_KEY,
     BASE_URI: process.env.BASE_URI,
-  },
-  /*
-   ** style-resources module configuration
-   ** use global sass settings
-   */
-  styleResources: {
-    scss: [
-      '~/assets/scss/settings/_variables.scss',
-      '~/assets/scss/settings/_functions.scss',
-      '~/assets/scss/settings/_mixins.scss',
-    ],
   },
   /*
    ** Build configuration

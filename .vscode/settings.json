@@ -3,6 +3,13 @@
     "titleBar.activeForeground": "#fafafa",
     "activityBar.background": "#7C4B8D",
     "activityBar.foreground": "#fafafa",
-    "activityBarBadge.background": "#333",
+    "activityBarBadge.background": "#333"
   },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.run": "onSave",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
