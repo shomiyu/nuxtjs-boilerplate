@@ -1,58 +1,89 @@
 # Nuxt.js のボイラープレート
 
-## ライブラリ
+Node.js のバージョン 14.17.3 で動作します。
 
-- yarn 1.21.1
-- Nuxt.js 2.14.0
-- ESlint 7.6.0
-- Prettier 2.0.5
-- axios 5.12.0
-- ress 3.0.0
-- dotenv 1.4.1
-- sass 1.32.8
-- sass-loader 9.0.3
-- date-fns 1.4.3
-- nuxt-optimized-images 1.4.0
-- imagemin-mozjpeg 9.0.0
-- imagemin-pngquant 9.0.1
-- cross-env 7.0.3
+## 機能
+
+- 構文チェック（ ESlint / Prettier ）
+- 非同期通信 ( axios )
+- CSS プリプロセッサ ( Sass )
+- 日付フォーマット ( date-fns )
+- モバイルデバイスからのアクセス ( cross-env )
+- 画像の自動圧縮 ( nuxt-optimized-images )
 
 ## セットアップ
 
-### 立ち上げ
-
 ```bash
 $ yarn install
-$ yarn dev
 ```
 
 ### 環境変数設定 (.env)
+
+microCMS の使用を想定した環境変数をアプリ内で設定しています。
 
 ```
 API_KEY = 'XXXXXXXXXX'
 BASE_URI = 'https://xxxxxx/'
 ```
 
-## 更新履歴
+## 起動
 
-### 2021/2/16 スタイル設計更新
+### 通常
 
-下記の scss 設定を更新
+```bash
+$ yarn dev
+```
 
-- mixins
-- functions
-- variables
-- base
+`localhost:3000`でアクセスできます。
+3000 ポートが埋まっている場合は空いているポート番号を Nuxt が自動で割り当てるのでターミナルを確認してください。
 
-### 2021/2/21 モジュール追加・更新
+### モバイル端末からローカル環境にアクセスする
 
-下記のモジュールを追加
+下記のコマンドで立ち上げるとターミナルに出力される IP アドレスで、モバイルデバイスからローカル環境にアクセスできるようになります。<br>（同じ Wi-Fi に繋いでいることが前提になります。）
 
-- date-fns
-- nuxt-optimized-images
-- imagemin-mozjpeg
-- imagemin-pngquant
-- cross-env
+```bash
+$ yarn dev:mobile
+```
 
-下記のモジュールを変更
-node-sass -> sass
+下記のようにターミナルに表示された IP でモバイル端末からアクセスできるようになります。<br>（繋がらない場合は Wi-Fi 設定を確認）
+
+```
+  ╭─────────────────────────────────────────╮
+   │                                         │
+   │   Nuxt @ v2.15.7                        │
+   │                                         │
+   │   ▸ Environment: development            │
+   │   ▸ Rendering:   server-side            │
+   │   ▸ Target:      server                 │
+   │                                         │
+   │   Listening: http://192.168.3.9:3333/   │
+   │                                         │
+   ╰─────────────────────────────────────────╯
+```
+
+※IP アドレスは個人で異なるので自分の環境を確認してください
+
+## 構文チェック
+
+eslint を導入しているため、常に構文チェックを行います。<br>エディターに VScode を使用している場合は、保存時に自動で Prettier によるフォーマットを行います。<br>自動でフォーマットされなかったインデントやカンマ、セミコロン、改行などの軽微なエラーは下記のコマンドで自動修正されます。
+
+```bash
+$ yarn lintfix
+```
+
+## デプロイ
+
+### Netlify
+
+下記の設定を行うと main ブランチに push することでデプロイができるようになります。
+
+[Deploy Nuxt on Netlify - Nuxt.js](https://ja.nuxtjs.org/docs/2.x/deployment/netlify-deployment)
+
+Site Settings > Build & deploy > Continuous Deployment > Build settings
+
+- Build command: `npm run generate`
+- Publish directory: `dist`
+
+環境変数がある場合には下記の設定も行います。
+
+Site Settings > Build & deploy > Environment > Environment variables
