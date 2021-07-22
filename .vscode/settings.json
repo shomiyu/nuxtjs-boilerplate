@@ -1,9 +1,13 @@
 {
   "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#fafafa",
-    "activityBar.background": "#7C4B8D",
-    "activityBar.foreground": "#fafafa",
-    "activityBarBadge.background": "#333"
+    "titleBar.activeForeground": "#34475a",
+    "activityBar.background": "#46b280",
+    "activityBar.foreground": "#34475a",
+    "activityBarBadge.background": "#3b7b6c",
+    "sideBar.background": "#34475a",
+    "list.activeSelectionBackground": "#46b280",
+    "list.hoverBackground": "#3b7b6c",
+    "sideBar.foreground": "#fff"
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
