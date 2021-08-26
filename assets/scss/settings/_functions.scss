@@ -14,16 +14,7 @@
  * @param px 変換するpx数
  */
 @function vw($maxScreenSize, $px) {
-  @return (($px / $maxScreenSize) * 100) * 1vw;
-}
-
-/**
- * 引数のpx数とparentを元に割合を返す関数
- * @param percent 最大画面サイズ
- * @param px 変換するpx数
- */
-@function rate($percent, $px) {
-  @return ($px / ($percent / 100)) * 100 * (1 / 100);
+  @return (math.div($px, $maxScreenSize) * 100) * 1vw;
 }
 
 /**
@@ -32,5 +23,5 @@
  * @param fontSize フォントサイズ
  */
 @function em($px, $fontSize: 16) {
-  @return ($px / $fontSize) * 1em;
+  @return math.div($px, $fontSize) * 1em;
 }

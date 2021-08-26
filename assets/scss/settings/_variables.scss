@@ -1,25 +1,34 @@
 @use "functions" as func;
+@use "palette";
 
-// color
-$color-black: #1c1c1c;
-$color-white: #fff;
-$color-off-white: #fafafa;
-$color-green: #3caea3;
-$color-yellow: #f6d55c;
-$color-blue: #179ad1;
-$color-red: #db3100;
-$disabled-color: #ddd;
-$error-color: $color-red;
+// -------------------------------------------
+// Color Settings
+// -------------------------------------------
 
-// brands
-$color-twitter: #1da1f2;
-$color-facebook: #3c5a99;
-$color-line: #00b900;
-$color-googlePlus: #dd5144;
-$color-youtube: #da1725;
+// base
+$base-color-primary: palette.$palette-gray-100;
+$base-color-secondary: palette.$palette-white-000;
+
+// main
+$main-color-primary: palette.$palette-yellowBrown-800;
+
+// key
+$key-color-red: palette.$palette-red-900;
+$key-color-brown: palette.$palette-brown-900;
+$key-color-yellowBrown: palette.$palette-yellowBrown-800;
+
+// text
+$text-color-primary: palette.$palette-gray-900;
+$text-color-accent: palette.$palette-yellowBrown-800;
+$text-color-gray: palette.$palette-gray-500;
+$text-color-light: palette.$palette-white-000;
 
 // background
-$color-body-background: $color-off-white;
+$color-body-background: palette.$palette-gray-100;
+
+// -------------------------------------------
+// Font Size Settings
+// -------------------------------------------
 
 // font-size
 $font-size-base: func.fz(16);
@@ -29,14 +38,21 @@ $font-size-lg: calc(#{$font-size-base} + #{func.fz(2)}); // 18
 $font-size-sm: calc(#{$font-size-base} - #{func.fz(2)}); // 14
 $font-size-xs: calc(#{$font-size-base} - #{func.fz(4)}); // 12
 
-// text
-$base-text-color: $color-black;
-$sub-text-color: $color-white;
+// -------------------------------------------
+// Typeface Settings
+// -------------------------------------------
+
+// Typeface
 $base-font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka',
   'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS P Gothic', sans-serif;
 
-// border
-$border-color: $color-black;
-$border-color-light: #ddd;
-$base-radius: 2px;
-$base-border-width: 1px;
+// -------------------------------------------
+// Break Points
+// -------------------------------------------
+$breakpoints: (
+  'sm': 480px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1200px,
+  'xxl': 1440px,
+) !default;
