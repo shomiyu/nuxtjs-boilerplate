@@ -32,18 +32,12 @@ export default {
   /*
    ** Global CSS and Sass
    */
-  css: [
-    'ress',
-    '~/assets/scss/settings/_functions.scss',
-    '~/assets/scss/settings/_variables.scss',
-    '~/assets/scss/settings/_mixins.scss',
-    '~/assets/scss/base.scss',
-  ],
+  css: ['ress', '~/assets/scss/base.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/axios'],
+  plugins: [],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -58,6 +52,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/date-fns',
     '@aceforth/nuxt-optimized-images',
+    'nuxt-microcms-module',
   ],
   /**
    * Nuxt Optimized Images
@@ -66,6 +61,17 @@ export default {
   optimizedImages: {
     optimizeImages: true,
     optimizeImagesInDev: true,
+  },
+  /*
+   ** microCMS module configuration
+   ** See https://www.npmjs.com/package/nuxt-microcms-module
+   */
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY,
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
   /*
    ** Nuxt.js modules
@@ -84,10 +90,6 @@ export default {
    */
   dotenv: {
     path: process.cwd(),
-  },
-  env: {
-    API_KEY: process.env.API_KEY,
-    BASE_URI: process.env.BASE_URI,
   },
   /*
    ** Build configuration
