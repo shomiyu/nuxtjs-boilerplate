@@ -5,20 +5,7 @@
 </template>
 
 <script>
-export default {
-  // async asyncData({ $microcms }) {
-  //   const faq = await $microcms.get({
-  //     endpoint: 'faq',
-  //   })
-  //   const blog = await $microcms.get({
-  //     endpoint: 'blog',
-  //   })
-  //   return {
-  //     faq,
-  //     blog,
-  //   }
-  // },
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
