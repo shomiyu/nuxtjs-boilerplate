@@ -5,28 +5,12 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ $microcms }) {
-    const faq = await $microcms.get({
-      endpoint: 'faq',
-    })
-
-    const blog = await $microcms.get({
-      endpoint: 'blog',
-    })
-
-    return {
-      faq,
-      blog,
-    }
-  },
+export default {}
 </script>
 
 <style lang="scss" scoped>
-@use "~assets/scss/settings/variables" as var;
-
 .title {
-  color: var.$base-text-color;
+  color: $text-color-primary;
   text-align: center;
 }
 </style>

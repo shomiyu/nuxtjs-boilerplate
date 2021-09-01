@@ -6,10 +6,12 @@ Node.js のバージョン 14.17.3 で動作します。
 
 - 構文チェック（ ESlint / Prettier ）
 - 非同期通信 ( axios )
+- リセット CSS ( ress )
 - CSS プリプロセッサ ( Sass )
 - 日付フォーマット ( date-fns )
-- モバイルデバイスからのアクセス ( cross-env )
+- モバイルデバイスからローカル環境にアクセス ( cross-env )
 - 画像の自動圧縮 ( nuxt-optimized-images )
+- microCMS 連携 ( nuxt-microcms-module )
 
 ## セットアップ
 
