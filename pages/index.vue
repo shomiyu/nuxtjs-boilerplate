@@ -6,27 +6,24 @@
 
 <script>
 export default {
-  async asyncData({ $microcms }) {
-    const faq = await $microcms.get({
-      endpoint: 'faq',
-    })
-
-    const blog = await $microcms.get({
-      endpoint: 'blog',
-    })
-
-    return {
-      faq,
-      blog,
-    }
-  },
+  // async asyncData({ $microcms }) {
+  //   const faq = await $microcms.get({
+  //     endpoint: 'faq',
+  //   })
+  //   const blog = await $microcms.get({
+  //     endpoint: 'blog',
+  //   })
+  //   return {
+  //     faq,
+  //     blog,
+  //   }
+  // },
+}
 </script>
 
 <style lang="scss" scoped>
-@use "~assets/scss/settings/variables" as var;
-
 .title {
-  color: var.$base-text-color;
+  color: $text-color-primary;
   text-align: center;
 }
 </style>

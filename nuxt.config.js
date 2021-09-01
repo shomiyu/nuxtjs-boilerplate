@@ -53,6 +53,7 @@ export default {
     '@nuxtjs/date-fns',
     '@aceforth/nuxt-optimized-images',
     'nuxt-microcms-module',
+    '@nuxtjs/style-resources',
   ],
   /**
    * Nuxt Optimized Images
@@ -72,6 +73,13 @@ export default {
       apiKey: process.env.API_KEY,
     },
     mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  },
+  /*
+   ** Style Resources module configuration
+   ** See https://www.npmjs.com/package/@nuxtjs/style-resources
+   */
+  styleResources: {
+    scss: ['~/assets/scss/system.scss'],
   },
   /*
    ** Nuxt.js modules
