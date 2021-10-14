@@ -65,7 +65,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    ** --------------------------------------------------
    */
-  plugins: [],
+  plugins: ['~/plugins/axios'],
   /*
    ** --------------------------------------------------
    ** Auto import components
@@ -84,7 +84,6 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/date-fns',
     '@aceforth/nuxt-optimized-images',
-    'nuxt-microcms-module',
     '@nuxtjs/style-resources',
   ],
   /**
@@ -132,6 +131,10 @@ export default {
    */
   dotenv: {
     path: process.cwd(),
+  },
+  env: {
+    API_KEY: process.env.API_KEY,
+    BASE_URI: process.env.BASE_URI,
   },
   /*
    ** --------------------------------------------------

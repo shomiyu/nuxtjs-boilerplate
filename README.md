@@ -11,7 +11,6 @@ Node.js のバージョン 14.17.3 で動作します。
 - 日付フォーマット ( date-fns )
 - モバイルデバイスからローカル環境にアクセス ( cross-env )
 - 画像の自動圧縮 ( nuxt-optimized-images )
-- microCMS 連携 ( nuxt-microcms-module )
 
 ## セットアップ
 
@@ -23,7 +22,7 @@ microCMS とのデータ通信をするために環境変数を作成する必�
 
 ```
 API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-SERVICE_DOMAIN=xxxx
+BASE_URI=xxxx
 ```
 
 ### モジュールインストール
@@ -93,3 +92,20 @@ Site Settings > Build & deploy > Continuous Deployment > Build settings
 環境変数がある場合には下記の設定も行います。
 
 Site Settings > Build & deploy > Environment > Environment variables
+
+## API の取得
+
+各 pages 配下の vue ファイル script 内で下記のように記述して API を取得します。<br>下記は microCMS を想定しています。
+
+```vue
+<script>
+export default {
+   async asyncData({ app }) {
+      const [blog] = await Promise.all([app.$api.get('blog')])
+      return {
+         blog: blog.data,
+      }
+   },
+}
+<script>
+```
