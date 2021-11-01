@@ -1,29 +1,24 @@
+// import axios from 'axios'
 const title = 'Nuxt.js project starter template'
 const description = 'This is Nuxt.js project starter template.'
 const uri = 'https://xxxx/'
 const target = 'static' // server or static
 
 export default {
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   mode: 'universal',
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   target,
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   head: {
     title,
     titleTemplate: '%s |' + ' ' + title,
@@ -53,31 +48,28 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Global CSS and Sass
-   ** --------------------------------------------------
-   */
-  css: ['ress', '~/assets/scss/base.scss'],
-  /*
-   ** --------------------------------------------------
+   ** -------------------------------------------------- */
+  css: [
+    'ress',
+    '~/assets/scss/base.scss',
+    '~/assets/scss/global.scss',
+    '~/assets/scss/animation.scss',
+  ],
+  /** --------------------------------------------------
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   plugins: ['~/plugins/axios'],
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   components: true,
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt.js dev-modules
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
@@ -87,6 +79,16 @@ export default {
     '@nuxtjs/style-resources',
   ],
   /**
+   * dotenv module configuration
+   */
+  dotenv: {
+    path: process.cwd(),
+  },
+  env: {
+    API_KEY: process.env.MAIN_API_KEY,
+    BASE_URI: process.env.BASE_URI,
+  },
+  /**
    * Nuxt Optimized Images
    * See: https://marquez.co/docs/nuxt-optimized-images/?ref=aceforth
    */
@@ -94,54 +96,58 @@ export default {
     optimizeImages: true,
     optimizeImagesInDev: true,
   },
-  /*
-   ** microCMS module configuration
-   ** See https://www.npmjs.com/package/nuxt-microcms-module
-   */
-  microcms: {
-    options: {
-      serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.API_KEY,
-    },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
-  },
-  /*
-   ** Style Resources module configuration
-   ** See https://www.npmjs.com/package/@nuxtjs/style-resources
+  /**
+   * Style Resources module configuration
+   * See https://www.npmjs.com/package/@nuxtjs/style-resources
    */
   styleResources: {
     scss: ['~/assets/scss/system.scss'],
   },
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt.js modules
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
+  /**
+   * Axios module configuration
+   * See https://axios.nuxtjs.org/options
    */
   axios: {},
-  /*
-   ** dotenv module configuration
+  /**
+   * Sitemap module configuration
+   * See https://www.npmjs.com/package/@nuxtjs/sitemap
    */
-  dotenv: {
-    path: process.cwd(),
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: uri,
+    // routes(callback) {
+    //   axios
+    //     .get(`${process.env.BASE_URI}blog?limit=1000`, {
+    //       headers: { 'X-MICROCMS-API-KEY': process.env.MAIN_API_KEY },
+    //     })
+    //     .then((res) => {
+    //       const routes = res.data.contents.map((blog) => {
+    //         return '/blog/' + blog.id
+    //       })
+    //       callback(null, routes)
+    //     })
+    //     .catch(callback)
+    // },
   },
-  env: {
-    API_KEY: process.env.API_KEY,
-    BASE_URI: process.env.BASE_URI,
+  /** --------------------------------------------------
+   ** Generate paging html
+   ** when called nuxt.generate()
+   ** -------------------------------------------------- */
+  generate: {
+    fallback: true,
   },
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
