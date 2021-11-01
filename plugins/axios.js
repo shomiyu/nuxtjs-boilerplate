@@ -2,7 +2,7 @@ export default function ({ $axios, redirect }, inject) {
   // Set baseURL to something different
   const api = $axios.create({
     headers: {
-      'X-API-KEY': `${process.env.API_KEY}`,
+      'X-MICROCMS-API-KEY': `${process.env.MAIN_API_KEY}`,
     },
   })
 
