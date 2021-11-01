@@ -4,26 +4,20 @@ const uri = 'https://xxxx/'
 const target = 'static' // server or static
 
 export default {
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   mode: 'universal',
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   target,
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   head: {
     title,
     titleTemplate: '%s |' + ' ' + title,
@@ -53,31 +47,23 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Global CSS and Sass
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   css: ['ress', '~/assets/scss/base.scss'],
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   plugins: ['~/plugins/axios'],
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   components: true,
-  /*
-   ** --------------------------------------------------
+  /** --------------------------------------------------
    ** Nuxt.js dev-modules
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
@@ -87,36 +73,7 @@ export default {
     '@nuxtjs/style-resources',
   ],
   /**
-   * Nuxt Optimized Images
-   * See: https://marquez.co/docs/nuxt-optimized-images/?ref=aceforth
-   */
-  optimizedImages: {
-    optimizeImages: true,
-    optimizeImagesInDev: true,
-  },
-  /*
-   ** Style Resources module configuration
-   ** See https://www.npmjs.com/package/@nuxtjs/style-resources
-   */
-  styleResources: {
-    scss: ['~/assets/scss/system.scss'],
-  },
-  /*
-   ** --------------------------------------------------
-   ** Nuxt.js modules
-   ** --------------------------------------------------
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /*
-   ** dotenv module configuration
+   * dotenv module configuration
    */
   dotenv: {
     path: process.cwd(),
@@ -125,12 +82,44 @@ export default {
     API_KEY: process.env.API_KEY,
     BASE_URI: process.env.BASE_URI,
   },
-  /*
-   ** --------------------------------------------------
+  /**
+   * Nuxt Optimized Images
+   * See: https://marquez.co/docs/nuxt-optimized-images/?ref=aceforth
+   */
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: true,
+  },
+  /**
+   * Style Resources module configuration
+   * See https://www.npmjs.com/package/@nuxtjs/style-resources
+   */
+  styleResources: {
+    scss: ['~/assets/scss/system.scss'],
+  },
+  /** --------------------------------------------------
+   ** Nuxt.js modules
+   ** -------------------------------------------------- */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+  ],
+  /**
+   * Axios module configuration
+   * See https://axios.nuxtjs.org/options
+   */
+  axios: {},
+  /** --------------------------------------------------
+   ** Generate paging html
+   ** when called nuxt.generate()
+   ** -------------------------------------------------- */
+  generate: {
+    fallback: true,
+  },
+  /** --------------------------------------------------
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
-   ** --------------------------------------------------
-   */
+   ** -------------------------------------------------- */
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
