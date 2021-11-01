@@ -22,6 +22,6 @@
  * @param px 変換するpx数
  * @param fontSize フォントサイズ
  */
-@function em($px, $fontSize: 16) {
+@function em($px, $fontSize: 14) {
   @return math.div($px, $fontSize) * 1em;
 }

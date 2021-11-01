@@ -51,7 +51,12 @@ export default {
   /** --------------------------------------------------
    ** Global CSS and Sass
    ** -------------------------------------------------- */
-  css: ['ress', '~/assets/scss/base.scss'],
+  css: [
+    'ress',
+    '~/assets/scss/base.scss',
+    '~/assets/scss/global.scss',
+    '~/assets/scss/animation.scss',
+  ],
   /** --------------------------------------------------
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

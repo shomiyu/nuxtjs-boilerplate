@@ -1,0 +1,22 @@
+// ----------------------------------
+// ページ遷移アニメーション（フェード）
+// ----------------------------------
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s;
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.4s;
+}
