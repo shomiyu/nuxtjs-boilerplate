@@ -95,17 +95,6 @@ export default {
     optimizeImagesInDev: true,
   },
   /*
-   ** microCMS module configuration
-   ** See https://www.npmjs.com/package/nuxt-microcms-module
-   */
-  microcms: {
-    options: {
-      serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.API_KEY,
-    },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
-  },
-  /*
    ** Style Resources module configuration
    ** See https://www.npmjs.com/package/@nuxtjs/style-resources
    */
