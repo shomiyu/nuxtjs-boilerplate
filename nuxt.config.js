@@ -80,7 +80,7 @@ export default {
     path: process.cwd(),
   },
   env: {
-    API_KEY: process.env.API_KEY,
+    API_KEY: process.env.MAIN_API_KEY,
     BASE_URI: process.env.BASE_URI,
   },
   /**
