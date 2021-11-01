@@ -11,6 +11,8 @@ Node.js のバージョン 14.17.3 で動作します。
 - 日付フォーマット ( date-fns )
 - モバイルデバイスからローカル環境にアクセス ( cross-env )
 - 画像の自動圧縮 ( nuxt-optimized-images )
+- サイトマップ自動生成 ( @nuxtjs/sitemap )
+- microCMS 連携
 
 ## セットアップ
 
@@ -21,8 +23,8 @@ microCMS とのデータ通信をするために環境変数を作成する必�
 ※microCMS の管理画面にログインするか、プロジェクト管理者に確認して正しい値を取得してください。
 
 ```
-API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-BASE_URI=xxxx
+MAIN_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+BASE_URI=https://xxxxxx.microcms.io/api/v1/
 ```
 
 ### モジュールインストール
