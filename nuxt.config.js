@@ -1,3 +1,4 @@
+// import axios from 'axios'
 const title = 'Nuxt.js project starter template'
 const description = 'This is Nuxt.js project starter template.'
 const uri = 'https://xxxx/'
@@ -103,12 +104,34 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
   ],
   /**
    * Axios module configuration
    * See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * Sitemap module configuration
+   * See https://www.npmjs.com/package/@nuxtjs/sitemap
+   */
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: uri,
+    // routes(callback) {
+    //   axios
+    //     .get(`${process.env.BASE_URI}blog?limit=1000`, {
+    //       headers: { 'X-MICROCMS-API-KEY': process.env.MAIN_API_KEY },
+    //     })
+    //     .then((res) => {
+    //       const routes = res.data.contents.map((blog) => {
+    //         return '/blog/' + blog.id
+    //       })
+    //       callback(null, routes)
+    //     })
+    //     .catch(callback)
+    // },
+  },
   /** --------------------------------------------------
    ** Generate paging html
    ** when called nuxt.generate()
